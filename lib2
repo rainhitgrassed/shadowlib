@@ -658,7 +658,7 @@ function redzlib:MakeWindow(Configs)
     AnchorPoint = Vector2.new(0, 1),
     ScrollBarThickness = 1.5,
     BackgroundTransparency = 1,
-    ScrollBarImageTransparency = 0.2,
+    ScrollBarImageTransparency = 1,
     CanvasSize = UDim2.new(),
     AutomaticCanvasSize = "Y",
     ScrollingDirection = "Y",
@@ -1193,11 +1193,9 @@ function redzlib:MakeWindow(Configs)
         Funcs:FireCallback(Callback, Default)
         if Default then
           CreateTween({Toggle, "Position", UDim2.new(1, 0, 0.5), 0.25})
-          CreateTween({Toggle, "BackgroundTransparency", 0, 0.25})
           CreateTween({Toggle, "AnchorPoint", Vector2.new(1, 0.5), 0.25, Wait or false})
         else
           CreateTween({Toggle, "Position", UDim2.new(0, 0, 0.5), 0.25})
-          CreateTween({Toggle, "BackgroundTransparency", 0.8, 0.25})
           CreateTween({Toggle, "AnchorPoint", Vector2.new(0, 0.5), 0.25, Wait or false})
         end
         WaitClick = false
